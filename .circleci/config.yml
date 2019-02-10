@@ -54,7 +54,7 @@ jobs:
       - run:
           name: Deploy to EB if branch is Master
           command: |
-            eb use teachie-awards --profile eb-cli
+            eb use teachie-awards --profile eb-cli --region us-west-2
             eb deploy -v --staged --profile eb-cli
 workflows:
   version: 2
