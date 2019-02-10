@@ -2,7 +2,8 @@ version: 2
 jobs:
   build: # runs not using Workflows must have a `build` job as entry point
 
-    working_directory: ~/teachie-awards # directory where steps will run
+    working_directory: /tmp
+    # working_directory: ~/teachie-awards # directory where steps will run
 
     docker: # run the steps with Docker
       - image: circleci/openjdk:8-jdk-browsers # ...with this image as the primary container; this is where all `steps` will run
@@ -31,13 +32,14 @@ jobs:
       - store_artifacts: # store the uberjar as an artifact
           # Upload test summary for display in Artifacts: https://circleci.com/docs/2.0/artifacts/
           path: target/teachie-awards-0.0.1-SNAPSHOT.jar
+          destination: teachie-awards-0.0.1-SNAPSHOT.jar
       # See https://circleci.com/docs/2.0/deployment-integrations/ for deploy examples
   deploy:
     docker:
       - image: circleci/python:2.7
-    working_directory: ~/teachie-awards
+    working_directory: /tmp
+#    working_directory: ~/teachie-awards
     steps:
-      - checkout
       - run:
           name: Install awscli
           command: |
