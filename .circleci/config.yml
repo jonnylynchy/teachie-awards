@@ -38,15 +38,9 @@ jobs:
           path: target/teachie-awards-0.0.1-SNAPSHOT.jar
 
       - persist_to_workspace:
-          root: /tmp/workspace
-          paths:
-            - target/teachie-awards-0.0.1-SNAPSHOT.jar
-          # Must be an absolute path, or relative path from working_directory. This is a directory on the container which is
-          # taken to be the root directory of the workspace.
-#          root: target
-#          # Must be relative path from root
-#          paths:
-#            - teachie-awards-0.0.1-SNAPSHOT.jar
+          root: .
+          paths: target
+
       # See https://circleci.com/docs/2.0/deployment-integrations/ for deploy examples
   deploy:
 #    executor: eb-executor
@@ -57,8 +51,11 @@ jobs:
       - checkout
       - attach_workspace:
           # Must be absolute path or relative path from working_directory
-          at: /tmp/workspace
-
+          at: ~/teachie-awards
+      - run:
+          name: check directory
+          command: |
+            ls -la target
       - run:
           name: Install awscli
           command: |
