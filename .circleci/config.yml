@@ -4,7 +4,7 @@ executors:
     docker:
       - image: circleci/openjdk:8-jdk-browsers
       - image: circleci/python:2.7
-    working_directory: /tmp
+    working_directory: ~/teachie-awards
 jobs:
   build: # runs not using Workflows must have a `build` job as entry point
     executor: eb-executor
@@ -54,7 +54,7 @@ jobs:
       - checkout
       - attach_workspace:
           # Must be absolute path or relative path from working_directory
-          at: /tmp/workspace
+          at: ~/teachie-awards/workspace
       - run:
           name: Install awscli
           command: |
