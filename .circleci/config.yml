@@ -1,17 +1,16 @@
 version: 2.1
-executors:
-  eb-executor:
-    docker:
-      - image: circleci/openjdk:8-jdk-browsers
-      - image: circleci/python:2.7
-    working_directory: ~/teachie-awards
+#executors:
+#  eb-executor:
+#    docker:
+#      - image: circleci/openjdk:8-jdk-browsers
+#    working_directory: ~/teachie-awards
 jobs:
   build: # runs not using Workflows must have a `build` job as entry point
-    executor: eb-executor
-#    working_directory: ~/teachie-awards # directory where steps will run
+#    executor: eb-executor
+    working_directory: ~/teachie-awards # directory where steps will run
 
-#    docker: # run the steps with Docker
-#      - image: circleci/openjdk:8-jdk-browsers # ...with this image as the primary container; this is where all `steps` will run
+    docker: # run the steps with Docker
+      - image: circleci/openjdk:8-jdk-browsers # ...with this image as the primary container; this is where all `steps` will run
 
     steps: # a collection of executable commands
 
@@ -46,10 +45,10 @@ jobs:
             - teachie-awards-0.0.1-SNAPSHOT.jar
       # See https://circleci.com/docs/2.0/deployment-integrations/ for deploy examples
   deploy:
-    executor: eb-executor
-#    docker:
-#      - image: circleci/python:2.7
-#    working_directory: ~/teachie-awards
+#    executor: eb-executor
+    docker:
+      - image: circleci/python:2.7
+    working_directory: ~/teachie-awards
     steps:
       - checkout
       - attach_workspace:
