@@ -1,9 +1,0 @@
-branch-defaults:
-  master:
-    environment: $CIRCLE_BRANCH-teachieawards
-global:
-  application_name: Teachie Awards
-  #default_ec2_keyname: XXXXXX
-  default_platform: 64bit Amazon Linux 2018.03 v3.1.0 running Tomcat 8.5 Java 8
-  default_region: us-west-2
-  sc: git

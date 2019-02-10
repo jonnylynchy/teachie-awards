@@ -26,3 +26,8 @@ node_modules
 /nbdist/
 /.nb-gradle/
 /build/
+
+# Elastic Beanstalk Files
+.elasticbeanstalk/*
+!.elasticbeanstalk/*.cfg.yml
+!.elasticbeanstalk/*.global.yml
