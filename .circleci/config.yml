@@ -7,7 +7,7 @@ executors:
     working_directory: /tmp
 jobs:
   build: # runs not using Workflows must have a `build` job as entry point
-    executor: my-executor
+    executor: eb-executor
 #    working_directory: ~/teachie-awards # directory where steps will run
 
 #    docker: # run the steps with Docker
