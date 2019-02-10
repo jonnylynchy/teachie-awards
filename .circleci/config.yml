@@ -35,7 +35,7 @@ jobs:
   deploy:
     docker:
       - image: circleci/python:2.7
-    working_directory: ~/repo
+    working_directory: ~/teachie-awards
     steps:
       - checkout
       - run:
