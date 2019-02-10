@@ -32,33 +32,33 @@ jobs:
           # Upload test summary for display in Artifacts: https://circleci.com/docs/2.0/artifacts/
           path: target/teachie-awards-0.0.1-SNAPSHOT.jar
       # See https://circleci.com/docs/2.0/deployment-integrations/ for deploy examples
-    deploy:
-      docker:
-        - image: circleci/python:2.7
-      working_directory: ~/repo
-      steps:
-        - checkout
-        - run:
-            name: Install awscli
-            command: |
-              sudo pip install awsebcli --upgrade
-        - run:
-            name: Create AWS credentials manually
-            command: |
-              mkdir ~/.aws
-              touch ~/.aws/config
-              chmod 600 ~/.aws/config
-              echo "[profile eb-cli]" > ~/.aws/config
-              echo "aws_access_key_id=$AWS_ACCESS_KEY_ID" >> ~/.aws/config
-              echo "aws_secret_access_key=$AWS_SECRET_ACCESS_KEY" >> ~/.aws/config
-        - run:
-            name: Deploy to EB if branch is Master
-            command: |
-              eb use MASTER-teachie-awards --profile eb-cli --region us-west-2
-              eb deploy -v --staged --profile eb-cli
+  deploy:
+    docker:
+      - image: circleci/python:2.7
+    working_directory: ~/repo
+    steps:
+      - checkout
+      - run:
+          name: Install awscli
+          command: |
+            sudo pip install awsebcli --upgrade
+      - run:
+          name: Create AWS credentials manually
+          command: |
+            mkdir ~/.aws
+            touch ~/.aws/config
+            chmod 600 ~/.aws/config
+            echo "[profile eb-cli]" > ~/.aws/config
+            echo "aws_access_key_id=$AWS_ACCESS_KEY_ID" >> ~/.aws/config
+            echo "aws_secret_access_key=$AWS_SECRET_ACCESS_KEY" >> ~/.aws/config
+      - run:
+          name: Deploy to EB if branch is Master
+          command: |
+            eb use MASTER-teachie-awards --profile eb-cli --region us-west-2
+            eb deploy -v --staged --profile eb-cli
 workflows:
   version: 2
-  build-deploy:
+  build-and-deploy:
     jobs:
       - build:
           filters:
@@ -67,6 +67,8 @@ workflows:
                 - master
                 - develop
       - deploy:
+          requires:
+            - build
           filters:
             branches:
               only:
