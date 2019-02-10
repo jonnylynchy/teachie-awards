@@ -2,6 +2,8 @@ branch-defaults:
   master:
     environment: MASTER-teachie-awards
     group_suffix: null
+deploy:
+  artifact: target/teachie-awards-0.0.1-SNAPSHOT.jar
 global:
   application_name: teachie-awards
   branch: null
