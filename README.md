@@ -1,4 +1,4 @@
-# Product Name
+# Teachie Awards
 > Virtual awards for teachers.
 
 [![CircleCI](https://circleci.com/gh/jonnylynchy/teachie-awards.svg?style=svg)](https://circleci.com/gh/jonnylynchy/teachie-awards)
