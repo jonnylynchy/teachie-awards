@@ -8,9 +8,7 @@ import org.springframework.test.context.junit4.SpringRunner;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest
-@AutoConfigureTestDatabase(replace= AutoConfigureTestDatabase.Replace.NONE)
 public class TeachieAwardsApplicationTests {
-
 	@Test
 	public void contextLoads() {
 	}
