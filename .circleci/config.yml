@@ -15,9 +15,12 @@ jobs:
     steps: # a collection of executable commands
 
       - run:
-          name: print env variables
+          name: attach env variables
           command: |
-            echo $TEACHIES_DATASOURCE_URL_PROD
+            echo 'export TEACHIES_DATASOURCE_URL_PROD=${TEACHIES_DATASOURCE_URL_PROD}' >> $BASH_ENV
+            echo 'export TEACHIES_DATASOURCE_USERNAME_PROD=${TEACHIES_DATASOURCE_USERNAME_PROD}' >> $BASH_ENV
+            echo 'export TEACHIES_DATASOURCE_PASSWORD_PROD=${TEACHIES_DATASOURCE_PASSWORD_PROD}' >> $BASH_ENV
+            echo 'export TEACHIES_JWT_SECRET=${TEACHIES_JWT_SECRET}' >> $BASH_ENV
 
       - checkout # check out source code to working directory
 
