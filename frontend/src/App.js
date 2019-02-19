@@ -3,18 +3,21 @@ import logo from './logo.svg';
 import './App.css';
 
 class App extends Component {
-  state = {};
+  state = {
+    message: 'Teachie Awards | A work in progress.'
+  };
 
   componentDidMount() {
-      setInterval(this.hello, 250);
+      // setInterval(this.hello, 250);
   }
-  hello = () => {
-    fetch('/api/hello')
-      .then(response => response.text())
-      .then(message => {
-          this.setState({message: message});
-      });
-  };
+  // Spring Security is implemented.
+  // hello = () => {
+  //   fetch('/api/hello')
+  //     .then(response => response.text())
+  //     .then(message => {
+  //         this.setState({message: message});
+  //     });
+  // };
 
   render() {
     return (
@@ -22,7 +25,6 @@ class App extends Component {
         <header className="App-header">
           <img src={logo} className="App-logo" alt="logo" />
           <h1 className="App-title">{this.state.message}</h1>
-          <h2>Wow, hey - would you look at that! Automatic deployments are working. :)</h2>
         </header>
       </div>
     );

@@ -1,4 +1,4 @@
-package com.lynch.teachieawards;
+package com.flux.teachieawards;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;

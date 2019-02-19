@@ -1,4 +1,4 @@
-package com.lynch.teachieawards.controllers;
+package com.flux.teachieawards.controllers;
 
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
