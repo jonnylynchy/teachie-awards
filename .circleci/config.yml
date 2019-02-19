@@ -57,6 +57,10 @@ jobs:
           command: |
             ls -la target
       - run:
+          name: print env variables
+          command: |
+            echo $TEACHIES_DATASOURCE_URL_PROD && echo $TEACHIES_DATASOURCE_USERNAME_PROD
+      - run:
           name: Install awscli
           command: |
             sudo pip install awsebcli --upgrade
