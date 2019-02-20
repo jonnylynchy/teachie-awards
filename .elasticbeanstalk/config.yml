@@ -1,11 +1,11 @@
 branch-defaults:
   master:
-    environment: MASTER-teachie-awards
+    environment: TeachieAwardsVpc-env
     group_suffix: null
 deploy:
   artifact: target/teachie-awards-0.0.1-SNAPSHOT.jar
 global:
-  application_name: teachie-awards
+  application_name: teachie-awards-vpc
   branch: null
   default_ec2_keyname: null
   default_platform: Java 8
