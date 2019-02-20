@@ -20,7 +20,6 @@ public class TeachieAwardsApplication {
 	}
 
 	public static void main(String[] args) {
-		System.out.println("DATA SOURCE URL:" + System.getenv("TEACHIES_DATASOURCE_URL_PROD"));
 		SpringApplication.run(TeachieAwardsApplication.class, args);
 	}
 }
