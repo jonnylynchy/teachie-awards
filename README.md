@@ -1,10 +1,11 @@
-# Teachie Awards
+# Teachie Awards API
 > Virtual awards for teachers.
 
 [![CircleCI](https://circleci.com/gh/jonnylynchy/teachie-awards.svg?style=svg)](https://circleci.com/gh/jonnylynchy/teachie-awards)
 
-This project is a website that gives teachers recognition in the form of a virtual award, the "Teachie". In the future users will be able to donate or solicit donations in the form of a gift card, or some form of small compensation in electronic format. 
-Users could discreetly nominate a teacher and solicit others for votes. If the teacher acquires a certain number of votes, they will be selected to receive a “Teachie”. The award would be some simple artwork of an award or trophy with the teacher's name and a relevant category. It would be deliverable via email, Twitter, and Facebook.
+This is the API/server side application that handles authentication, data retrieval and data persistence for the client/front-end application:
+
+[https://github.com/jonnylynchy/teachie-awards-client](https://github.com/jonnylynchy/teachie-awards-client)
 
 ## Installation
 
@@ -22,18 +23,16 @@ mvn clean install
 
 ## Development setup
 
-This project requires Java 8 and Maven as well as NPM and Node for the front-end.
+This project requires Java 8 and Maven.
 
-To run both Spring Boot project and development server (webpack development server):
+To run Spring Boot project:
 ```sh
 mvn spring-boot:run
 ```
 
-## Release History
+## Deployments
 
-* 0.0.1
-    * CHANGE: Create intitial repo
-    * CHANGE: Add automated deployment with CircleCI
+The MASTER branch of this project is automatically tested, built and deployed via CircleCI.
 
 ## Meta
 
