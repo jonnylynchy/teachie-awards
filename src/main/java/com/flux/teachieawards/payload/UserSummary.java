@@ -3,12 +3,14 @@ package com.flux.teachieawards.payload;
 public class UserSummary {
     private Long id;
     private String username;
-    private String name;
+    private String firstName;
+    private String lastName;
 
-    public UserSummary(Long id, String username, String name) {
+    public UserSummary(Long id, String username, String firstName, String lastName) {
         this.id = id;
         this.username = username;
-        this.name = name;
+        this.firstName = firstName;
+        this.lastName = lastName;
     }
 
     public Long getId() {
@@ -27,11 +29,19 @@ public class UserSummary {
         this.username = username;
     }
 
-    public String getName() {
-        return name;
+    public String getFirstName() {
+        return firstName;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
+    }
+
+    public String getLastName() {
+        return lastName;
+    }
+
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
     }
 }
