@@ -185,3 +185,213 @@ VALUES
     '75214',
     @districtID2
 );
+
+-- EVENTS 
+
+use teachies;
+
+-- SCHOOL IDs
+
+set @schoolID1 =(select school_id
+from teachies.schools
+where name = 'Centennial High School');
+
+set @schoolID2 =(select school_id
+from teachies.schools
+where name = 'Liberty High School');
+
+set @schoolID3 =(select school_id
+from teachies.schools
+where name = 'Wakeland High School');
+
+set @schoolID4 =(select school_id
+from teachies.schools
+where name = 'Bryan Adams High School');
+
+set @schoolID5 =(select school_id
+from teachies.schools
+where name = 'Skyline High School');
+
+set @schoolID6 =(select school_id
+from teachies.schools
+where name = 'Woodrow Wilson High School');
+
+INSERT INTO `teachies`.`events`
+(`created_at`,
+`updated_at`,
+`end_date`,
+`name`,
+`start_date`,
+`school_id`)
+VALUES
+(NOW(),
+NOW(),
+'2019-05-30',
+'Most Dedicated Math Teacher',
+'2019-01-01',
+@schoolID1);
+
+INSERT INTO `teachies`.`events`
+(`created_at`,
+`updated_at`,
+`end_date`,
+`name`,
+`start_date`,
+`school_id`)
+VALUES
+(NOW(),
+NOW(),
+'2019-05-30',
+'Most Awesome History Teacher',
+'2019-01-01',
+@schoolID1);
+
+INSERT INTO `teachies`.`events`
+(`created_at`,
+`updated_at`,
+`end_date`,
+`name`,
+`start_date`,
+`school_id`)
+VALUES
+(NOW(),
+NOW(),
+'2019-05-30',
+'Most Dedicated Math Teacher',
+'2019-01-01',
+@schoolID2);
+
+INSERT INTO `teachies`.`events`
+(`created_at`,
+`updated_at`,
+`end_date`,
+`name`,
+`start_date`,
+`school_id`)
+VALUES
+(NOW(),
+NOW(),
+'2019-05-30',
+'Most Awesome History Teacher',
+'2019-01-01',
+@schoolID2);
+
+INSERT INTO `teachies`.`events`
+(`created_at`,
+`updated_at`,
+`end_date`,
+`name`,
+`start_date`,
+`school_id`)
+VALUES
+(NOW(),
+NOW(),
+'2019-05-30',
+'Most Dedicated Math Teacher',
+'2019-01-01',
+@schoolID3);
+
+INSERT INTO `teachies`.`events`
+(`created_at`,
+`updated_at`,
+`end_date`,
+`name`,
+`start_date`,
+`school_id`)
+VALUES
+(NOW(),
+NOW(),
+'2019-05-30',
+'Most Awesome History Teacher',
+'2019-01-01',
+@schoolID3);
+
+INSERT INTO `teachies`.`events`
+(`created_at`,
+`updated_at`,
+`end_date`,
+`name`,
+`start_date`,
+`school_id`)
+VALUES
+(NOW(),
+NOW(),
+'2019-05-30',
+'Most Dedicated Math Teacher',
+'2019-01-01',
+@schoolID4);
+
+INSERT INTO `teachies`.`events`
+(`created_at`,
+`updated_at`,
+`end_date`,
+`name`,
+`start_date`,
+`school_id`)
+VALUES
+(NOW(),
+NOW(),
+'2019-05-30',
+'Most Awesome History Teacher',
+'2019-01-01',
+@schoolID4);
+
+INSERT INTO `teachies`.`events`
+(`created_at`,
+`updated_at`,
+`end_date`,
+`name`,
+`start_date`,
+`school_id`)
+VALUES
+(NOW(),
+NOW(),
+'2019-05-30',
+'Most Dedicated Math Teacher',
+'2019-01-01',
+@schoolID5);
+
+INSERT INTO `teachies`.`events`
+(`created_at`,
+`updated_at`,
+`end_date`,
+`name`,
+`start_date`,
+`school_id`)
+VALUES
+(NOW(),
+NOW(),
+'2019-05-30',
+'Most Awesome History Teacher',
+'2019-01-01',
+@schoolID5);
+
+INSERT INTO `teachies`.`events`
+(`created_at`,
+`updated_at`,
+`end_date`,
+`name`,
+`start_date`,
+`school_id`)
+VALUES
+(NOW(),
+NOW(),
+'2019-05-30',
+'Most Dedicated Math Teacher',
+'2019-01-01',
+@schoolID6);
+
+INSERT INTO `teachies`.`events`
+(`created_at`,
+`updated_at`,
+`end_date`,
+`name`,
+`start_date`,
+`school_id`)
+VALUES
+(NOW(),
+NOW(),
+'2019-05-30',
+'Most Awesome History Teacher',
+'2019-01-01',
+@schoolID6);

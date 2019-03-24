@@ -53,7 +53,7 @@ public class SchoolController {
      * @param schoolDistrictId
      * @return
      */
-    @RequestMapping(value = "schools/district/{schoolDistrictId}", method = RequestMethod.GET)
+    @RequestMapping(value = "/schools/district/{schoolDistrictId}", method = RequestMethod.GET)
     public List<School> listBySchoolDistrictId(@PathVariable int schoolDistrictId) {
         SchoolDistrict schoolDistrict = schoolDistrictRepository.getOne(schoolDistrictId);
         List<School> schoolList = schoolRepository.findSchoolsBySchoolDistrict(schoolDistrict);
