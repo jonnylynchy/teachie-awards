@@ -37,6 +37,17 @@ public class SchoolController {
     }
 
     /**
+     * List of all school districts
+     * 
+     * @return
+     */
+    @GetMapping("/schooldistricts")
+    public List<SchoolDistrict> listDistricts() {
+        List<SchoolDistrict> schoolDistrictList = schoolDistrictRepository.findAll();
+        return schoolDistrictList;
+    }
+
+    /**
      * List of all schools by school district
      * 
      * @param schoolDistrictId
