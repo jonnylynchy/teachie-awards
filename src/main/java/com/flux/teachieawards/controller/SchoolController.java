@@ -60,4 +60,5 @@ public class SchoolController {
         return schoolList;
     }
 
+
 }

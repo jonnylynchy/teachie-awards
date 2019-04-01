@@ -27,6 +27,8 @@ node_modules
 /.nb-gradle/
 /build/
 
+**/.DS_Store
+
 # Elastic Beanstalk Files
 #.elasticbeanstalk/*
 #!.elasticbeanstalk/*.cfg.yml

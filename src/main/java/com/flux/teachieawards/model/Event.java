@@ -1,5 +1,6 @@
 package com.flux.teachieawards.model;
 
+import com.fasterxml.jackson.annotation.JsonAutoDetect;
 import com.flux.teachieawards.model.audit.DateAudit;
 
 import org.springframework.format.annotation.DateTimeFormat;
@@ -12,6 +13,7 @@ import javax.validation.constraints.Size;
 
 @Entity
 @Table(name = "events")
+//@JsonAutoDetect(fieldVisibility = JsonAutoDetect.Visibility.ANY)
 public class Event extends DateAudit {
     private static final long serialVersionUID = 1L;
 

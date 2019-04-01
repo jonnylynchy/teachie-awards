@@ -10,6 +10,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Optional;
 
 @RestController
 @RequestMapping("/api")
@@ -24,7 +25,7 @@ public class EventController {
     private static final Logger logger = LoggerFactory.getLogger(SchoolController.class);
 
     /**
-     * List of all schools
+     * List of all events
      * 
      * @return
      */
@@ -32,6 +33,17 @@ public class EventController {
     public List<Event> list() {
         List<Event> eventList = eventRepository.findAll();
         return eventList;
+    }
+
+    /**
+     * One Event
+     *
+     * @return
+     */
+    @GetMapping("/events/{eventId}")
+    public Optional<Event> getEvent(@PathVariable int eventId) {
+        Optional<Event> event = eventRepository.findById(eventId);
+        return event;
     }
 
     /**
