@@ -11,6 +11,8 @@ public interface EventRepository extends JpaRepository<Event, Integer> {
     // Custom method to find event by it's name label
     Event findEventByName(String name);
 
+    Event findByEventId(int id);
+
     // Custom method to find events by their associated school
     List<Event> findEventsBySchool(School school);
 }

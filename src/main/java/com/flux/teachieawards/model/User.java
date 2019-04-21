@@ -15,7 +15,7 @@ import java.util.Set;
 public class User extends DateAudit {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    private int id;
 
     @NotBlank
     @Size(max = 40)
@@ -55,11 +55,11 @@ public class User extends DateAudit {
         this.password = password;
     }
 
-    public Long getId() {
+    public int getId() {
         return id;
     }
 
-    public void setId(Long id) {
+    public void setId(int id) {
         this.id = id;
     }
 

@@ -1,23 +1,23 @@
 package com.flux.teachieawards.payload;
 
 public class UserSummary {
-    private Long id;
+    private int id;
     private String username;
     private String firstName;
     private String lastName;
 
-    public UserSummary(Long id, String username, String firstName, String lastName) {
+    public UserSummary(int id, String username, String firstName, String lastName) {
         this.id = id;
         this.username = username;
         this.firstName = firstName;
         this.lastName = lastName;
     }
 
-    public Long getId() {
+    public int getId() {
         return id;
     }
 
-    public void setId(Long id) {
+    public void setId(int id) {
         this.id = id;
     }
 

@@ -22,13 +22,6 @@ public class Event extends DateAudit {
     @Column(name = "event_id")
     private int eventId;
 
-
-    // - schoolId (fk)
-	// - eventId (pk)
-	// - name
-	// - start date
-	// - end date
-
     @NotBlank
     @Size(max = 100)
     private String name;

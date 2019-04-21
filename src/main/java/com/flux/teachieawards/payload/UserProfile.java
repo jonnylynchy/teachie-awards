@@ -3,7 +3,7 @@ package com.flux.teachieawards.payload;
 import java.time.Instant;
 
 public class UserProfile {
-    private Long id;
+    private int id;
     private String username;
     private String firstName;
     private String lastName;
@@ -11,7 +11,7 @@ public class UserProfile {
     // private Long pollCount;
     // private Long voteCount;
 
-    public UserProfile(Long id, String username, String firstName, String lastName, Instant joinedAt) {
+    public UserProfile(int id, String username, String firstName, String lastName, Instant joinedAt) {
         this.id = id;
         this.username = username;
         this.firstName = firstName;
@@ -21,11 +21,11 @@ public class UserProfile {
         // this.voteCount = voteCount;
     }
 
-    public Long getId() {
+    public int getId() {
         return id;
     }
 
-    public void setId(Long id) {
+    public void setId(int id) {
         this.id = id;
     }
 
