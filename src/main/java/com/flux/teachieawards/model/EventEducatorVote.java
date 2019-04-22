@@ -13,19 +13,19 @@ public class EventEducatorVote extends DateAudit {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "vote_id")
-    private int voteId;
+    public int voteId;
 
-    @ManyToOne
+    @ManyToOne(cascade = CascadeType.ALL, fetch=FetchType.EAGER)
     @JoinColumn(name = "event_id")
     @NotNull(message = "*Please provide an event")
-    private Event event;
+    public Event event;
 
-    @ManyToOne
+    @ManyToOne(cascade = CascadeType.ALL, fetch=FetchType.EAGER)
     @JoinColumn(name = "user_id")
     @NotNull(message = "*Please provide a user")
     private User user;
 
-    @ManyToOne
+    @ManyToOne(cascade = CascadeType.ALL, fetch=FetchType.EAGER)
     @JoinColumn(name = "educator_id")
     @NotNull(message = "*Please provide an educator")
     private User educator;

@@ -1,5 +1,6 @@
 package com.flux.teachieawards.controller;
 
+import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 import com.flux.teachieawards.exception.ResourceNotFoundException;
 import com.flux.teachieawards.model.*;
 import com.flux.teachieawards.payload.*;
@@ -17,11 +18,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
-import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
-import java.net.URI;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
@@ -29,9 +28,6 @@ import java.util.Optional;
 @RestController
 @RequestMapping("/api")
 public class UserController {
-
-    @PersistenceContext
-    EntityManager entityManager;
 
     @Autowired
     private UserRepository userRepository;
@@ -44,16 +40,6 @@ public class UserController {
 
     @Autowired
     private EventEducatorVoteRepository voteRepository;
-    // @Autowired
-    // private PollRepository pollRepository;
-
-    // @Autowired
-    // private VoteRepository voteRepository;
-
-    // @Autowired
-    // private PollService pollService;
-
-    private static final Logger logger = LoggerFactory.getLogger(UserController.class);
 
     @GetMapping("/user/me")
     @PreAuthorize("hasRole('USER')")
@@ -90,18 +76,17 @@ public class UserController {
     }
 
     @GetMapping("/user/educators")
-    public List<UserSummary> getEducators() {
+    public List<EducatorSummary> getEducators() {
         Optional<Role> educatorRole = roleRepository.findByName(RoleName.ROLE_EDUCATOR);
 
         List<User> users =  userRepository.findByRolesContains(educatorRole);
-        List<UserSummary> userSummaries = new ArrayList<>();
+        List<EducatorSummary> educatorSummaries = new ArrayList<>();
 
-        users.forEach(user ->
-            userSummaries.add(new UserSummary(user.getId(), user.getUsername(),
-                user.getFirstName(), user.getLastName())
+        users.forEach(user -> educatorSummaries.add(new EducatorSummary(user.getId(), user.getUsername(),
+                user.getFirstName(), user.getLastName(), voteRepository.findEventEducatorVotesByEducator(user))
         ));
 
-        return userSummaries;
+        return educatorSummaries;
     }
 
     @GetMapping("/user/educator/vote")
@@ -115,6 +100,18 @@ public class UserController {
 
         // Save vote and return
         return voteRepository.save(vote);
+    }
+
+    @GetMapping("/user/votesByUser/{userId}")
+    public List<EventEducatorVote> getUserVotes(@PathVariable(value = "userId") int userId) {
+        User user = userRepository.findByUserId(userId);
+        return voteRepository.findEventEducatorVotesByUser(user);
+    }
+
+    @GetMapping("/user/votesByEducator/{educatorId}")
+    public List<EventEducatorVote> getEducatorVotes(@PathVariable(value = "educatorId") int educatorId) {
+        User user = userRepository.findByUserId(educatorId);
+        return voteRepository.findEventEducatorVotesByEducator(user);
     }
 
 }
