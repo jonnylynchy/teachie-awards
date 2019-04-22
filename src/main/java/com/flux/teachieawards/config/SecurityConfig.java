@@ -1,3 +1,6 @@
+/**
+ * This file manages the applications security configuration
+ */
 package com.flux.teachieawards.config;
 
 import com.flux.teachieawards.security.CustomUserDetailsService;
@@ -56,6 +59,11 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
         return new BCryptPasswordEncoder();
     }
 
+    /**
+     * This method configures the entire application's security settings
+     * @param http
+     * @throws Exception
+     */
     @Override
     protected void configure(HttpSecurity http) throws Exception {
         http

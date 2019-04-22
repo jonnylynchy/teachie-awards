@@ -3,6 +3,9 @@ package com.flux.teachieawards.model;
 import org.hibernate.annotations.NaturalId;
 import javax.persistence.*;
 
+/**
+ * Roles
+ */
 @Entity
 @Table(name = "roles")
 public class Role {

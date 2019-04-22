@@ -1,3 +1,6 @@
+/**
+ * Vote repository
+ */
 package com.flux.teachieawards.repository;
 
 import com.flux.teachieawards.model.EventEducatorVote;

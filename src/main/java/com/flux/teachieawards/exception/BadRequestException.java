@@ -1,3 +1,6 @@
+/**
+ * In case we need to define/return bad request exceptions
+ */
 package com.flux.teachieawards.exception;
 
 import org.springframework.http.HttpStatus;

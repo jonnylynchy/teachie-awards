@@ -11,9 +11,11 @@ import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
+/**
+ * Events
+ */
 @Entity
 @Table(name = "events")
-//@JsonAutoDetect(fieldVisibility = JsonAutoDetect.Visibility.ANY)
 public class Event extends DateAudit {
     private static final long serialVersionUID = 1L;
 

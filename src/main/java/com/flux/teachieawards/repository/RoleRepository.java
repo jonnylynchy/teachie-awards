@@ -1,3 +1,6 @@
+/**
+ * Roles
+ */
 package com.flux.teachieawards.repository;
 
 import com.flux.teachieawards.model.Role;

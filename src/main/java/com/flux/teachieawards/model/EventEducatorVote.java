@@ -4,9 +4,12 @@ import com.flux.teachieawards.model.audit.DateAudit;
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 
+/**
+ * Educator Votes
+ */
 @Entity
 @Table(name = "event_educator_votes")
-//@JsonAutoDetect(fieldVisibility = JsonAutoDetect.Visibility.ANY)
+
 public class EventEducatorVote extends DateAudit {
     private static final long serialVersionUID = 1L;
 

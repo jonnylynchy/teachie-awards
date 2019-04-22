@@ -6,6 +6,9 @@ import javax.persistence.*;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Size;
 
+/**
+ * School Districts
+ */
 @Entity
 @Table(name = "school_districts")
 public class SchoolDistrict extends DateAudit {

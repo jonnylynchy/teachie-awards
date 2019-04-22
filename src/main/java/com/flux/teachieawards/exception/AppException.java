@@ -1,3 +1,6 @@
+/**
+ * This file manages the standard exceptions
+ */
 package com.flux.teachieawards.exception;
 
 import org.springframework.http.HttpStatus;

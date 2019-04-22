@@ -1,3 +1,6 @@
+/**
+ * This file manages the configuration for audit data
+ */
 package com.flux.teachieawards.config;
 
 import com.flux.teachieawards.security.UserPrincipal;
